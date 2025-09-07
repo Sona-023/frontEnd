@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #111b21;
+    color: #e9edef;
+  }
+
+  #root {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  .whatsapp-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .whatsapp-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .whatsapp-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+  }
+
+  .whatsapp-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .message-bubble {
+    @apply max-w-xs lg:max-w-md px-3 py-2 rounded-lg shadow-sm;
+  }
+
+  .message-in {
+    @apply bg-whatsapp-message-in text-whatsapp-text-dark;
+  }
+
+  .message-out {
+    @apply bg-whatsapp-message-out text-whatsapp-text-dark;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-whatsapp-light-gray rounded-full border-none outline-none text-whatsapp-text-dark placeholder-whatsapp-text-light;
+  }
+
+  .btn-primary {
+    @apply bg-whatsapp-green hover:bg-whatsapp-green-dark text-white px-6 py-3 rounded-full font-medium transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-whatsapp-blue hover:bg-blue-600 text-white px-6 py-3 rounded-full font-medium transition-colors duration-200;
+  }
+}
