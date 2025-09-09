@@ -133,6 +133,16 @@ const Chat: React.FC = () => {
             <button className="p-2 hover:bg-gray-700 rounded-full transition-colors">
               <Search className="w-5 h-5 text-gray-300" />
             </button>
+            <button 
+              onClick={() => {
+                localStorage.removeItem('auth-storage');
+                window.location.reload();
+              }}
+              className="px-3 py-1 text-xs bg-red-600 hover:bg-red-700 text-white rounded transition-colors"
+              title="Reset for testing"
+            >
+              Reset
+            </button>
             <button className="p-2 hover:bg-gray-700 rounded-full transition-colors">
               <MoreVertical className="w-5 h-5 text-gray-300" />
             </button>

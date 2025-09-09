@@ -179,3 +179,5 @@ export const getMedicalResponse = (userMessage: string): MedicalResponse => {
 export const getFollowUpQuestions = (response: MedicalResponse): string[] => {
   return response.suggestions || [];
 };
+
+

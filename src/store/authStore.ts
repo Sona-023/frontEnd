@@ -5,12 +5,13 @@ interface User {
   id: string;
   phoneNumber: string;
   name?: string;
+  location?: string;
 }
 
 interface AuthState {
   user: User | null;
   isAuthenticated: boolean;
-  login: (phoneNumber: string, name?: string) => void;
+  login: (phoneNumber: string, name?: string, location?: string) => void;
   logout: () => void;
   updateUser: (userData: Partial<User>) => void;
 }
@@ -20,11 +21,12 @@ export const useAuthStore = create<AuthState>()(
     (set) => ({
       user: null,
       isAuthenticated: false,
-      login: (phoneNumber: string, name?: string) => {
+      login: (phoneNumber: string, name?: string, location?: string) => {
         const user: User = {
           id: Date.now().toString(),
           phoneNumber,
-          name: name || `User ${phoneNumber.slice(-4)}`
+          name: name || `User ${phoneNumber.slice(-4)}`,
+          location: location || 'Unknown'
         };
         set({ user, isAuthenticated: true });
       },

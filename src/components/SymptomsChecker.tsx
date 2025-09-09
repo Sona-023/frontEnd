@@ -203,3 +203,5 @@ const SymptomsChecker: React.FC<SymptomsCheckerProps> = ({ onSymptomsSelected, o
 };
 
 export default SymptomsChecker;
+
+
